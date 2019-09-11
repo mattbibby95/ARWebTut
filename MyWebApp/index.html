@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First Web-AR App!</title>
+
+    <!-- This is 8th Wall's version of Aframe -->
+    <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
+
+    <!-- This allows us some nice 8th wall AR extras such as the tap to recenter and a loading spinner -->
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
+    <!-- We need to replace the XXXXXXXX here with our AppKey -->
+    <script async src="//apps.8thwall.com/xrweb?appKey=76ZXfqUXU4WjzcF3j3COyqxdgylAbcbSnHqyfHXo7IWmeJWSgkxOveZy93cPbQERsXsG5C"></script>
+
+  </head>
+
+  <body>
+
+    <a-scene
+      xrweb
+      xrextras-tap-recenter
+      xrextras-almost-there
+      xrextras-loading
+      xrextras-runtime-error>
+
+    <a-camera position="0 8 8"></a-camera>
+
+    <a-entity
+      light="type: directional;
+          castShadow: true;
+          intensity: 0.8;
+          shadowCameraTop: 7;
+          shadowMapHeight: 1024;
+          shadowMapWidth: 1024;"
+      position="1 4.3 2.5">
+    </a-entity>
+
+    <a-entity
+      light="type: directional; castShadow: false; intensity: 0.5;"
+      position="-0.8 3 1.85">
+    </a-entity>
+
+    <a-light type="ambient" intensity="0.2"></a-light>
+
+    <a-box 
+      color="blue" 
+      depth="2" 
+      height="2" 
+      width="3"
+      position="0 0 2">
+    </a-box>
+
+    <a-entity
+      geometry="primitive: box; width: 1; height: 1; depth: 1"
+      material="color: yellow"
+      position="-0.8 1.2 2"
+      rotation="0 45 0"
+      scale="0.5 0.5 0.5">
+    </a-entity>
+
+    </a-scene>
+
+  </body>
+
+</html>
